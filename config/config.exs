@@ -36,9 +36,9 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 # Configure Ecto to access database
-config :auction_web, ecto_repos: [Auction.Repo]
+config :auction, ecto_repos: [Auction.Repo]
 
-config :auction_web, Auction.Repo,
+config :auction, Auction.Repo,
   database: "auction",
   username: "postgres",
   password: "postgres",
