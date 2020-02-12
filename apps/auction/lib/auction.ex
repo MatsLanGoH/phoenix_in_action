@@ -23,6 +23,8 @@ defmodule Auction do
     |> @repo.insert()
   end
 
+  def new_item, do: Item.changeset(%Item{})
+
   def update_item(%Auction.Item{} = item, updates) do
     item
     |> Item.changeset(updates)
