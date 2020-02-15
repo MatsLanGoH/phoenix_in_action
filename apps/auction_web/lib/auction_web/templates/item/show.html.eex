@@ -4,3 +4,5 @@
     <li><strong>Description: </strong><%= @item.description %></li>
     <li><strong>Auction ends at: </strong><%= @item.ends_at %></li>
 </ul>
+
+<p><%= link("Edit item", to: Routes.item_path(@conn, :edit, @item)) %></p>

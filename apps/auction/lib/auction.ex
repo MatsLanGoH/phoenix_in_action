@@ -2,7 +2,7 @@ defmodule Auction do
   @moduledoc """
   Documentation for `Auction`.
   """
-  alias Auction.{Repo, Item}
+  alias Auction.Item
 
   @repo Auction.Repo
   def list_items do
@@ -33,4 +33,9 @@ defmodule Auction do
 
   @spec delete_item(Auction.Item.t()) :: any
   def delete_item(%Item{} = item), do: @repo.delete(item)
+
+  def edit_item(id) do
+    get_item(id)
+    |> Item.changeset()
+  end
 end
