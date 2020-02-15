@@ -2,7 +2,7 @@ defmodule Auction do
   @moduledoc """
   Documentation for `Auction`.
   """
-  alias Auction.Item
+  alias Auction.{Repo, Item}
 
   @repo Auction.Repo
   def list_items do
@@ -18,8 +18,8 @@ defmodule Auction do
   end
 
   def insert_item(attrs) do
-    Item
-    |> struct(attrs)
+    %Item{}
+    |> Item.changeset(attrs)
     |> @repo.insert()
   end
 
